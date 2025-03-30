@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Pedido | Tô de Carro</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/novoPedido.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/icone-logo.png" type="image/png">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <div class="navbar-brand">
+            <a href="#" class="logo-modern">
+                <div class="logo-modern-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="logo-modern-text">
+                    TÔ<span>DECARRO</span>
+                </div>
+            </a>
+        </div>
+        <div class="navbar-links">
+            <a href="/cliente.html" class="nav-link">
+                <i class="fas fa-home"></i> Início
+            </a> 
+            <a href="/meusPedidos.html" class="nav-link">
+                <i class="fas fa-clipboard-list"></i> Meus Pedidos
+            </a>
+            <a href="/novoPedido.html" class="nav-link active">
+                <i class="fas fa-plus"></i> Novo Pedido
+            </a>           
+        </div>
+    </nav>
+
+    <div class="order-container">
+        <header>
+            <h1>Criar Novo Pedido</h1>
+        </header>
+        
+        <form id="novoPedidoForm" class="order-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="veiculo">Selecione o veículo:</label>
+                    <select id="veiculo" class="form-control" required>
+                        <option value="">Selecione um veículo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="justificativa">Justificativa:</label>
+                <textarea id="justificativa" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="diasAluguel">Dias de aluguel:</label>
+                    <input type="number" id="diasAluguel" class="form-control" min="1" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="condicoes">Condições de pagamento:</label>
+                    <select id="condicoes" class="form-control" required>
+                        <option value="">Selecione</option>
+                        <option value="À vista">À vista</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito</option>
+                        <option value="Cartão de Débito">Cartão de Débito</option>
+                        <option value="Boleto">Boleto</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="parcelasDiv" class="form-row" style="display: none;">
+                <div class="form-group">
+                    <label for="parcelas">Número de parcelas:</label>
+                    <select id="parcelas" class="form-control">
+                        <option value="1">1x</option>
+                        <option value="2">2x</option>
+                        <option value="3">3x</option>
+                        <option value="4">4x</option>
+                        <option value="5">5x</option>
+                        <option value="6">6x</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Enviar Pedido</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/script/novoPedido.js"></script>
+</body>
+</html>

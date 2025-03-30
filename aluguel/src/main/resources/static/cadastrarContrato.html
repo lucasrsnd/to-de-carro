@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Contrato | Tô de Carro</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/cadastrarContrato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/icone-logo.png" type="image/png">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <div class="navbar-brand">
+            <a href="#" class="logo-modern">
+                <div class="logo-modern-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="logo-modern-text">
+                    TÔ<span>DECARRO</span>
+                </div>
+            </a>
+        </div>
+        <div class="navbar-links">
+            <a href="/agente.html" class="nav-link">
+                <i class="fas fa-home"></i> Início
+            </a> 
+            <a href="/cadastrarContrato.html" class="nav-link active">
+                <i class="fas fa-file-contract"></i> Contratos
+            </a>
+            <a href="/listarContratos.html" class="nav-link">
+                <i class="fas fa-eye"></i> Visualizar Contratos
+            </a>
+            <a href="/avaliacao.html" class="nav-link">
+                <i class="fas fa-clipboard-list"></i> Pedidos Pendentes
+            </a>           
+        </div>
+    </nav>
+
+    <div class="contract-container">
+        <header>
+            <h1>Cadastro de Contrato</h1>
+        </header>
+        
+        <div class="search-section">
+            <div class="form-group">
+                <label for="cpfCliente">CPF do cliente:</label>
+                <div class="input-with-button">
+                    <input type="text" id="cpfCliente" class="form-control" placeholder="000.000.000-00">
+                    <button onclick="consultarPedido()" class="btn-search">
+                        <i class="fas fa-search"></i> Consultar Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="informacoesPedido" class="info-section" style="display: none;">
+            <h2>Informações do Pedido</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Nome:</span>
+                    <span id="nomeCliente" class="info-value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Veículo:</span>
+                    <span id="modeloCarro" class="info-value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Justificativa:</span>
+                    <span id="justificativa" class="info-value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Condições:</span>
+                    <span id="condicoes" class="info-value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span id="status" class="info-value"></span>
+                </div>
+            </div>
+        </div>
+
+        <form id="formularioContrato" class="contract-form" style="display: none;">
+            <h2>Dados do Contrato</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nomeClienteContrato">Nome do cliente:</label>
+                    <input type="text" id="nomeClienteContrato" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="telefoneCliente">Telefone do cliente:</label>
+                    <input type="text" id="telefoneCliente" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="modeloCarroContrato">Modelo do carro:</label>
+                    <input type="text" id="modeloCarroContrato" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="placaCarro">Placa do veículo:</label>
+                    <input type="text" id="placaCarro" class="form-control" placeholder="AAA-0000" maxlength="8">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dataInicioAluguel">Data de início:</label>
+                    <input type="date" id="dataInicioAluguel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="dataFimAluguel">Data de fim:</label>
+                    <input type="date" id="dataFimAluguel" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="precoDiaria">Preço da diária:</label>
+                    <input type="number" id="precoDiaria" class="form-control" step="0.01" oninput="calcularTotal()">
+                </div>
+                <div class="form-group">
+                    <label for="quantidadeDiarias">Quantidade de diárias:</label>
+                    <input type="number" id="quantidadeDiarias" class="form-control" oninput="calcularTotal()">
+                </div>
+                <div class="form-group">
+                    <label for="valorTotal">Valor total:</label>
+                    <input type="text" id="valorTotal" class="form-control" readonly>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="formaPagamento">Forma de pagamento:</label>
+                    <select id="formaPagamento" class="form-control">
+                        <option value="Boleto">Boleto</option>
+                        <option value="Cartão de Crédito/Débito">Cartão de Crédito/Débito</option>
+                        <option value="À vista">À vista</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipoContrato">Tipo de contrato:</label>
+                    <select id="tipoContrato" class="form-control">
+                        <option value="Propriedade do cliente">Propriedade do cliente</option>
+                        <option value="Empresa">Empresa</option>
+                        <option value="Banco">Banco</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Contrato de crédito:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="contratoCredito" value="sim"> Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="contratoCredito" value="nao" checked> Não
+                    </label>
+                </div>
+            </div>
+
+            <div id="instituicaoCreditoDiv" class="form-group" style="display: none;">
+                <label for="instituicaoCredito">Nome da instituição:</label>
+                <input type="text" id="instituicaoCredito" class="form-control">
+            </div>
+
+            <div class="form-actions">
+                <button type="button" onclick="criarContrato()" class="btn-submit">
+                    <i class="fas fa-file-signature"></i> Criar Contrato
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/script/cadastrarContrato.js"></script>
+</body>
+</html>

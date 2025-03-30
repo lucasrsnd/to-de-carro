@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Pendentes | Tô de Carro</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/avaliacao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/icone-logo.png" type="image/png">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <div class="navbar-brand">
+            <a href="#" class="logo-modern">
+                <div class="logo-modern-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="logo-modern-text">
+                    TÔ<span>DECARRO</span>
+                </div>
+            </a>
+        </div>
+        <div class="navbar-links">
+            <a href="/agente.html" class="nav-link">
+                <i class="fas fa-home"></i> Início
+            </a> 
+            <a href="/cadastrarContrato.html" class="nav-link">
+                <i class="fas fa-file-contract"></i> Contratos
+            </a>
+            <a href="/listarContratos.html" class="nav-link">
+                <i class="fas fa-eye"></i> Visualizar Contratos
+            </a>
+            <a href="/avaliacao.html" class="nav-link active">
+                <i class="fas fa-clipboard-list"></i> Pedidos Pendentes
+            </a>           
+        </div>
+    </nav>
+
+    <div class="pending-orders-container">
+        <header>
+            <h1>Todos os Pedidos</h1>
+        </header>
+
+        <div class="orders-section">
+            <h2>Pedidos em Análise</h2>
+            <div class="table-responsive">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>ID do pedido</th>
+                            <th>Nome do cliente</th>
+                            <th>Veículo</th>
+                            <th>Justificativa</th>
+                            <th>Condições</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pedidosEmAnaliseList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="orders-section">
+            <h2>Outros Pedidos</h2>
+            <div class="table-responsive">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>ID do pedido</th>
+                            <th>Nome do cliente</th>
+                            <th>Veículo</th>
+                            <th>Justificativa</th>
+                            <th>Condições</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pedidosOutrosList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script/avaliacao.js"></script>
+</body>
+</html>
