@@ -1,4 +1,4 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=98FB98&height=120&section=header"/>
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=3498db&height=120&section=header"/>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=fff&size=35&center=true&vCenter=true&width=1000&lines=Tô+de+Carro)](https://git.io/typing-svg)
 
@@ -34,33 +34,108 @@ O sistema registra informações essenciais sobre os contratantes, veículos e c
 <img width="2512" alt="Image" src="/Artefatos/Diagramas/diagrama de classes.png" />
 
 # Estrutura dos Diretórios
+
 ```
-src/  
-│  
-├── controller/  
-│   └──   
-│   └──   
-│   └──   
-│  
-├── data/  
-│   └──   
-│   └──   
-│   └──   
-│  
-├── model/  
-│   └──   
-│   └──   
-│   └──   
-│  
-├── view/  
-│   └──   
-│   └──  
-│   └──  
-│  
-└── Main.java
+aluguel/
+│
+└── src/
+    │
+    └── main/
+        │
+        ├── java/
+        │   └── com/
+        │       └── todecarro/
+        │           └── aluguel/
+        │               │
+        │               ├── config/
+        │               │   └── CorsConfig.java
+        │               │
+        │               ├── controller/
+        │               │   └── AuthController.java
+        │               │   └── ContratoController.java
+        │               │   └── PaymentController.java
+        │               │   └── PedidoController.java
+        │               │   └── VeiculoController.java
+        │               │
+        │               ├── model/
+        │               │   └── Contrato.java
+        │               │   └── Pedido.java
+        │               │   └── Usuario.java
+        │               │   └── Veiculo.java
+        │               │
+        │               ├── repository/
+        │               │   └── ContratoRepository.java
+        │               │   └── PedidoRepository.java
+        │               │   └── UsuarioRepository.java
+        │               │   └── VeiculoRepository.java
+        │               │
+        │               ├── service/
+        │               │   └── ContratoService.java
+        │               │   └── PedidoService.java
+        │               │   └── UsuarioService.java
+        │               │   └── VeiculoService.java
+        │               │
+        │               └── AluguelApplication.java
+        │
+        └── resources/
+            │
+            ├── application.properties
+            │
+            ├── static/
+            │   ├── administrador.html
+            │   ├── agente.html
+            │   ├── avaliacao.html
+            │   ├── cadastrar.html
+            │   ├── cadastrarContrato.html
+            │   ├── cadastrarVeiculo.html
+            │   ├── cliente.html
+            │   ├── imagens.json
+            │   ├── index.html
+            │   ├── listarContratos.html
+            │   ├── login.html
+            │   ├── meusPedidos.html
+            │   ├── nossosVeiculos.html
+            │   ├── novoPedido.html
+            │   ├── visualizarVeiculos.html
+            │   │
+            │   ├── css/
+            │   │   ├── administrador.css
+            │   │   ├── agente.css
+            │   │   ├── avaliacao.css
+            │   │   ├── cadastrar.css
+            │   │   ├── cadastrarContrato.css
+            │   │   ├── cadastrarVeiculo.css
+            │   │   ├── cliente.css
+            │   │   ├── listarContratos.css
+            │   │   ├── login.css
+            │   │   ├── meusPedidos.css
+            │   │   ├── navbar.css
+            │   │   ├── nossosVeiculos.css
+            │   │   ├── novoPedido.css
+            │   │   ├── style.css
+            │   │   └── visualizarVeiculos.css
+            │   │
+            │   ├── img/
+            │   │   ├── cta.jpg
+            │   │   ├── hero.jpg
+            │   │   ├── icone-logo.png
+            │   │   └── Todecarro.png
+            │   │
+            │   └── script/
+            │       ├── avaliacao.js
+            │       ├── cadastrar.js
+            │       ├── cadastrarContrato.js
+            │       ├── cadastrarVeiculo.js
+            │       ├── listarContratos.js
+            │       ├── login.js
+            │       ├── meusPedidos.js
+            │       ├── nossosVeiculos.js
+            │       ├── novoPedido.js
+            │       ├── script.js
+            │       └── visualizarVeiculos.js
 ```
 
 # Apresentação com Slides
-Link do slide: 
+Link do slide: https://www.canva.com/design/DAGjza3u5nM/nRT9KQ1WIoqQIX6oNUa5pg/edit?utm_content=DAGjza3u5nM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
   
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=98FB98&height=120&section=footer"/>
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=3498db&height=120&section=footer"/>
